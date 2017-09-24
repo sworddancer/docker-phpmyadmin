@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql_clz
+    environment:
+      - MYSQL_ROOT_PASSWORD=Lizhi1359
+
+  phpmyadmin:
+    image: nazarpc/phpmyadmin
+    container_name: phpmyadmin_clz
+    ports:
+      - 40090:80
+    depends_on:
+      - mysql
